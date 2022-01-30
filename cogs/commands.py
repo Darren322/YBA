@@ -119,6 +119,7 @@ class vouchcommands(commands.Cog):
       if isinstance(error, discord.ext.commands.errors.MemberNotFound):
           await ctx.send(f'User not in the server!')
       if isinstance(error, commands.CommandOnCooldown):
+          await ctx.message.delete()
           msg = '**Still on cooldown**, please try again in {:.2f}s'.format(error.retry_after)
           await ctx.author.send(msg)
 
