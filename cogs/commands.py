@@ -116,7 +116,6 @@ class vouchcommands(commands.Cog):
   async def on_command_error_vouch(self, ctx, error):
       if isinstance(error, discord.ext.commands.errors.MissingRequiredArgument):
           await ctx.send(f'Please follow this format: \n{config.PREFIX}vouch <@!322562448530079745> 5 Bought suke for $10,000. Easy and fast trade')
-          ctx.command.reset_cooldown(ctx) 
       if isinstance(error, discord.ext.commands.errors.MemberNotFound):
           await ctx.send(f'User not in the server!')
       if isinstance(error, commands.CommandOnCooldown):
