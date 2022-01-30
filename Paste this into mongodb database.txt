@@ -1,0 +1,6 @@
+{
+    "Masters": [],
+    "Blacklist": [],
+    "VouchCount": 0,
+    "Users": []
+}

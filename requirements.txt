@@ -1,0 +1,9 @@
+asyncio==3.4.3
+colorama==0.4.4
+Cython==0.29.24
+discord.py==1.7.3
+jmespath==0.10.0
+multidict==4.7.6
+pymongo==4.0
+PyNaCl==1.2.1
+pymongo[tls,srv]
