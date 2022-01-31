@@ -81,7 +81,7 @@ class vouchcommands(commands.Cog):
 
 
 
-  @commands.command()
+  @commands.command(name ="getrole", aliases=["getroles"])
   async def getrole(self, ctx):
       success = await userCommands.getrole(ctx.author,
       bcGuild= self.client.get_guild(ctx.guild.id),

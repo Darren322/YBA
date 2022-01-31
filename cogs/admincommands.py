@@ -22,6 +22,7 @@ class vouchadmincommands(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+
     @commands.command()
     async def scammer(self, ctx, member: discord.User):
         db = cluster[config.database][config.collection]  
