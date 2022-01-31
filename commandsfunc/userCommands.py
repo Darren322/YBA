@@ -361,6 +361,9 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
     else:
       IsScammer = "No"
 
+      
+    totalratings = round(AverageRatings, 1)
+
 
 
     # Add relevant information
