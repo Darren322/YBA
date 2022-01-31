@@ -116,7 +116,7 @@ async def addVouches(user: discord.User,
     embed = newEmbed(description='', title=f'Adding of vouches')
     embed.add_field(name='Receiver', value=f'{targetUser.mention}', inline=False)
     embed.add_field(name='Giver', value=f'<@!{user.mention}>', inline=False)
-    embed.add_field(name='Amount of vouches', value={No}, inline=False)
+    embed.add_field(name='Amount of vouches', value=No, inline=False)
     await logChannel.send(embed=embed)
     
     
