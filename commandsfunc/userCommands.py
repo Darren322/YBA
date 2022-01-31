@@ -262,7 +262,7 @@ async def profile(targetUser: discord.User, bcGuild: discord.Guild,
     else:
       IsScammer = "No"
 
-    if int(daysLeft2.days) < 10 and int(daysLeft.days) < 7:
+    if int(daysLeft2.days) < 7 and int(daysLeft.days) < 10:
       warning = "(Very Risky)"
     elif int(daysLeft2.days) < 7:
       warning = "(Risky)"
