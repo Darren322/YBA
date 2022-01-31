@@ -24,14 +24,8 @@ class vouchadmincommands(commands.Cog):
 
 
     @commands.command()
+    @commands.has_role(config.scammer_role)
     async def scammer(self, ctx, member: discord.User):
-        db = cluster[config.database][config.collection]  
-        for document in db.find():
-            allData = document  
-        masterIDs = allData['Staff']
-        if ctx.author.id not in masterIDs:
-            await ctx.send("You have no permsission to use this command!")
-            return
         success = await adminCommands.scammer(member,
                                 ctx.message.channel
                                 )  
@@ -41,14 +35,8 @@ class vouchadmincommands(commands.Cog):
             await ctx.send(f"Removed {success[1]} from scammer list")
 
     @commands.command(name ="removemany", aliases=["delvouches"])
+    @commands.has_role(config.vouchadmin_role)
     async def removemany(self, ctx, member: discord.Member, args: int):
-        db = cluster[config.database][config.collection]  
-        for document in db.find():
-            allData = document  
-        masterIDs = allData['Staff']
-        if ctx.author.id not in masterIDs:
-            await ctx.send("You have no permsission to use this command!")
-            return
         channel = ctx.message.channel
         success = await adminCommands.removemany(member, channel, args)
         if success:
@@ -87,14 +75,8 @@ class vouchadmincommands(commands.Cog):
 
 
     @commands.command(name ="addvouch", aliases=["addvouches"])
+    @commands.has_role(config.vouchadmin_role)
     async def addvouch(self, ctx, member: discord.Member, args: int):
-        db = cluster[config.database][config.collection]  
-        for document in db.find():
-            allData = document  
-        masterIDs = allData['Staff']
-        if ctx.author.id not in masterIDs:
-            await ctx.send("You have no permsission to use this command!")
-            return
         if member == self.client.user:
             await ctx.send("You are not allowed to add vouches to the bot")
             return
@@ -115,14 +97,8 @@ class vouchadmincommands(commands.Cog):
 
 
     @commands.command()
+    @commands.has_role(config.vouchadmin_role)
     async def remove(self, ctx, member: discord.Member, args: int = -1):
-        db = cluster[config.database][config.collection]  
-        for document in db.find():
-            allData = document  
-        masterIDs = allData['Staff']
-        if ctx.author.id not in masterIDs:
-            await ctx.send("You have no permsission to use this command!")
-            return
         channel = ctx.message.channel
         success = await adminCommands.remove(member, channel, args)
         if success[0]:

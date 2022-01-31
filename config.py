@@ -15,4 +15,5 @@ trusted_role_name3 = 910699802461892629
 trusted_role_name4 = 910699802461892630
 trusted_role_name5 = 910699802461892631
 vouchadmin_role = 936559244889718824
+scammer_role = 937613086666403890
 Server_Name = "YBA | Market"
