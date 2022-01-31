@@ -333,12 +333,15 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
 
     TotalReviews = u.fiveratingsgiven + u.fourratingsgiven + u.threeratingsgiven + u.tworatingsgiven + u.oneratingsgiven
     if TotalReviews == 0:
-      TotalReviews = 1
+      TotalReviews = 0
     AverageWeightRating = (u.fiveratingsgiven)*5 + (u.fourratingsgiven)*4 + (u.threeratingsgiven)*3 + (u.tworatingsgiven)*2 + (u.oneratingsgiven)*1
     if AverageWeightRating == 0:
-      AverageWeightRating = 5
+      AverageWeightRating = 0
       
-    AverageRatings = AverageWeightRating/TotalReviews
+    try:
+      AverageRatings = AverageWeightRating/TotalReviews
+    except ZeroDivisionError:
+      AverageRatings = 0
 
     if AverageRatings >= 5:
       Ratings = '✮✮✮✮✮'
@@ -365,7 +368,7 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
     # embed.add_field(name='Vouch Information\n\n',
     #                value=f'\n\n**Vouches Given:** {u.vouchesgiven} \n\n**Vouchs Received:** {len(u.vouches)}')
     embed.add_field(name='Rating\n\n',
-                    value=f'{Ratings}')
+                    value=f'{Ratings} `{totalratings}/5`')
     embed.add_field(name='Vouches Given\n\n',
                     value=f'{u.vouchesgiven}\n\n')
     embed.add_field(name='Vouches Received\n\n',
