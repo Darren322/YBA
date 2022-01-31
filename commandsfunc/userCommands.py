@@ -92,7 +92,7 @@ async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.T
 
     us = User(user.id)
     
-    if trusted_role5 not in user.roles and len(us.vouches) >= 100:
+    if trusted_role5 not in user.roles and len(us.vouches) >= 500:
         await user.add_roles(trusted_role5)
         await user.remove_roles(trusted_role4)
         await user.remove_roles(trusted_role3)
@@ -101,7 +101,7 @@ async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.T
         trustedname = 'Trusted 5'
         return True, trustedname
 
-    elif trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 70:
+    elif trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 400:
         await user.add_roles(trusted_role4)
         await user.remove_roles(trusted_role3)
         await user.remove_roles(trusted_role2)
@@ -110,7 +110,7 @@ async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.T
         return True, trustedname
 
 
-    elif trusted_role3 not in user.roles and trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 50:
+    elif trusted_role3 not in user.roles and trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 300:
         await user.add_roles(trusted_role3)
         await user.remove_roles(trusted_role2)
         await user.remove_roles(trusted_role)
@@ -118,14 +118,14 @@ async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.T
         return True, trustedname
 
 
-    elif trusted_role2 not in user.roles and trusted_role3 not in user.roles and trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 20:
+    elif trusted_role2 not in user.roles and trusted_role3 not in user.roles and trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 200:
         await user.add_roles(trusted_role2)
         await user.remove_roles(trusted_role)
         trustedname = 'Trusted 2'
         return True, trustedname
        
 
-    elif trusted_role not in user.roles and trusted_role2 not in user.roles and len(us.vouches) >= 10:
+    elif trusted_role not in user.roles and trusted_role2 not in user.roles and len(us.vouches) >= 100:
         await user.add_roles(trusted_role)
         trustedname = 'Trusted 1'
         return True, trustedname
