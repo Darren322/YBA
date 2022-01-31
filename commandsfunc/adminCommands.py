@@ -113,9 +113,9 @@ async def addVouches(user: discord.User,
         vouch = Vouch(v)
         db.update_one({'_id': obj_id, 'Users.ID': targetUser.id}, {'$push': {'Users.$[i].Vouches': vouch.toDict()}}, upsert = False, array_filters= [{'i.ID': targetUser.id}])
 
-    embed = newEmbed(description='', title=f'Adding of vouches')
+    embed = newEmbed(description='', title=f'Adding of vouches', color=BLUE)
     embed.add_field(name='Receiver', value=f'{targetUser.mention}', inline=False)
-    embed.add_field(name='Giver', value=f'<@!{user.mention}>', inline=False)
+    embed.add_field(name='Giver', value=f'{user.mention}', inline=False)
     embed.add_field(name='Amount of vouches', value=No, inline=False)
     await logChannel.send(embed=embed)
     
