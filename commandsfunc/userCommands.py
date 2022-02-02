@@ -244,15 +244,15 @@ async def profile(targetUser: discord.User, bcGuild: discord.Guild,
 
 
     if AverageRatings >= 5:
-      Ratings = '✮✮✮✮✮'
+      Ratings = '★★★★★'
     elif AverageRatings >= 4:
-      Ratings = '✮✮✮✮☆'
+      Ratings = '★★★★☆'
     elif AverageRatings >= 3:
-      Ratings = '✮✮✮☆☆'
+      Ratings = '★★★☆☆'
     elif AverageRatings >= 2:
-      Ratings = '✮✮☆☆☆'
+      Ratings = '★★☆☆☆'
     elif AverageRatings >= 1:
-      Ratings = '✮☆☆☆☆'
+      Ratings = '★☆☆☆☆'
     elif AverageRatings >= 0:
       Ratings = '☆☆☆☆☆'
 
@@ -344,15 +344,15 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
       AverageRatings = 0
 
     if AverageRatings >= 5:
-      Ratings = '✮✮✮✮✮'
+      Ratings = '★★★★★'
     elif AverageRatings >= 4:
-      Ratings = '✮✮✮✮☆'
+      Ratings = '★★★★☆'
     elif AverageRatings >= 3:
-      Ratings = '✮✮✮☆☆'
+      Ratings = '★★★☆☆'
     elif AverageRatings >= 2:
-      Ratings = '✮✮☆☆☆'
+      Ratings = '★★☆☆☆'
     elif AverageRatings >= 1:
-      Ratings = '✮☆☆☆☆'
+      Ratings = '★☆☆☆☆'
     elif AverageRatings >= 0:
       Ratings = '☆☆☆☆☆'
 
