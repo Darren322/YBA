@@ -256,7 +256,6 @@ async def profile(targetUser: discord.User, bcGuild: discord.Guild,
     elif AverageRatings >= 0:
       Ratings = '☆☆☆☆☆'
 
-
     if u.isScammer:
       IsScammer = "Yes"
     else:
@@ -361,7 +360,7 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
     else:
       IsScammer = "No"
 
-      
+     
     totalratings = round(AverageRatings, 1)
 
 
