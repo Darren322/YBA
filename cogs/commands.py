@@ -24,7 +24,7 @@ class vouchcommands(commands.Cog):
       trade = (" ".join(args[:]))
       logChannel = self.client.get_channel(config.LOG_CHANNEL_ID)
       channel = ctx.message.channel
-      vouchChannel = self.client.get_channel(config.VOUCHES_CHANNEL_ID)
+      vouchChannel = config.VOUCHES_CHANNEL_ID
       if member == ctx.author:
           await ctx.send("You cannot vouch for yourself.")
           ctx.command.reset_cooldown(ctx)
@@ -46,7 +46,7 @@ class vouchcommands(commands.Cog):
           ctx.command.reset_cooldown(ctx) 
           return
 
-      if ctx.message.channel is not vouchChannel:
+      if ctx.message.channel.id not in vouchChannel:
           await ctx.send(f'You only can use {config.PREFIX}vouch in **vouches** channel')
           ctx.command.reset_cooldown(ctx)
           return
