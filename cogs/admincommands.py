@@ -165,7 +165,17 @@ class vouchadmincommands(commands.Cog):
         if isinstance(error, discord.ext.commands.errors.MissingRequiredArgument):
             await ctx.send(f'Missing argument\n{config.PREFIX}admin <user>')
             
+    @autoclear.error
+    async def on_command_error8(ctx, error):
+        if isinstance(error, discord.ext.commands.errors.MissingRequiredArgument):
+            await ctx.send('Please follow this format: \n ?autoclear [duration]')
+        if isinstance(error, discord.ext.commands.errors.MissingRole):
+            await ctx.send('You have no permission to use this command. Idiot')
 
+    @stopclear.error
+    async def on_command_error9(ctx, error):
+        if isinstance(error, discord.ext.commands.errors.MissingRole):
+            await ctx.send('No permission to use this cunt')
           
 def setup(client):
   client.add_cog(vouchadmincommands(client))
