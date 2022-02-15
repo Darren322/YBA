@@ -55,7 +55,7 @@ class vouchadmincommands(commands.Cog):
     @commands.has_role("purgeperm")
     async def autoclear(self, ctx, duration: int):
         global purgetask 
-        purgetask = cilent.loop.create_task(clearmessages(self, ctx, duration))
+        purgetask = client.loop.create_task(clearmessages(self, ctx, duration))
 
 
     @commands.command(name='stopclear')
