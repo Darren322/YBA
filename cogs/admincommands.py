@@ -43,7 +43,7 @@ class vouchadmincommands(commands.Cog):
             await ctx.send(f'**{args}** vouches have been removed from {member.mention}')
 
 
-    async def clearmessages(self, ctx , duration):
+    async def clearmessages(ctx , duration):
         durationdays = duration // 86400
         while True:
             await ctx.channel.purge(limit = 1000)
@@ -55,7 +55,7 @@ class vouchadmincommands(commands.Cog):
     @commands.has_role("purgeperm")
     async def autoclear(self, ctx, duration: int):
         global purgetask 
-        purgetask = client.loop.create_task(clearmessages(self, ctx, duration))
+        purgetask = client.loop.create_task(clearmessages(ctx, duration))
 
 
     @commands.command(name='stopclear')
