@@ -43,14 +43,7 @@ class vouchadmincommands(commands.Cog):
             await ctx.send(f'**{args}** vouches have been removed from {member.mention}')
 
 
-    async def clearmessages(self, ctx , duration):
-        durationdays = duration // 86400
-        while True:
-            await ctx.channel.purge(limit = 1000)
-            await asyncio.sleep(1.5)
-            await ctx.send("Channel purged. Next purge in {:.1f} day(s)".format(durationdays))
-            await asyncio.sleep(duration)
-
+    
     @commands.command(name='autoclear')
     @commands.has_role("purgeperm")
     async def autoclear(self, ctx, duration: int):
