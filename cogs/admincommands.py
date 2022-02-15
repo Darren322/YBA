@@ -51,14 +51,14 @@ class vouchadmincommands(commands.Cog):
             await ctx.send("Channel purged. Next purge in {:.1f} day(s)".format(durationdays))
             await asyncio.sleep(duration)
 
-    @cilent.command(name='autoclear')
+    @commands.command(name='autoclear')
     @commands.has_role("purgeperm")
     async def autoclear(self, ctx, duration: int):
         global purgetask 
         purgetask = cilent.loop.create_task(clearmessages(ctx, duration))
 
 
-    @cilent.command(name='stopclear')
+    @commands.command(name='stopclear')
     @commands.has_role("purgeperm")
     async def stopclear(self, ctx):
         purgetask.cancel()
