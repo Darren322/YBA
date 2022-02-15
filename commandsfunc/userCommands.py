@@ -84,11 +84,11 @@ async def vouch(user: discord.User,
         
 async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.TextChannel):
 
-    trusted_role = discord.utils.get(bcGuild.roles, id=config.trusted_role_name1)
-    trusted_role2 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name2)
-    trusted_role3 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name3)
-    trusted_role4 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name4)
-    trusted_role5 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name5)
+    trusted_role = discord.utils.get(bcGuild.roles, name="Trusted 1")
+    trusted_role2 = discord.utils.get(bcGuild.roles, name="Trusted 2")
+    trusted_role3 = discord.utils.get(bcGuild.roles, name="Trusted 3")
+    trusted_role4 = discord.utils.get(bcGuild.roles, name="Trusted 4")
+    trusted_role5 = discord.utils.get(bcGuild.roles, name="Trusted 5")
 
     us = User(user.id)
     
@@ -177,11 +177,11 @@ async def profile(targetUser: discord.User, bcGuild: discord.Guild,
         profile is displayed.
     '''
     u = User(targetUser.id)
-    trusted_role = discord.utils.get(bcGuild.roles, id=config.trusted_role_name1)
-    trusted_role2 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name2)
-    trusted_role3 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name3)
-    trusted_role4 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name4)
-    trusted_role5 = discord.utils.get(bcGuild.roles, id=config.trusted_role_name5)
+    trusted_role = discord.utils.get(bcGuild.roles, name="Trusted 1")
+    trusted_role2 = discord.utils.get(bcGuild.roles, name="Trusted 2")
+    trusted_role3 = discord.utils.get(bcGuild.roles, name="Trusted 3")
+    trusted_role4 = discord.utils.get(bcGuild.roles, name="Trusted 4")
+    trusted_role5 = discord.utils.get(bcGuild.roles, name="Trusted 5")
 
     today = datetime.utcnow()
     accountcreated = targetUser.created_at

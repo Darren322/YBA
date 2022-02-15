@@ -99,7 +99,7 @@ class vouchcommands(commands.Cog):
       else:
           user = member
       await userCommands.profile(targetUser=user,
-          bcGuild=self.client.get_guild(config.GUILD_ID),
+          bcGuild=self.client.get_guild(ctx.guild.id),
           channel= ctx.message.channel)
 
   @commands.command()
