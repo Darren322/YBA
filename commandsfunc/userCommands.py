@@ -74,6 +74,7 @@ async def vouch(user: discord.User,
     embed.add_field(name='Giver', value=f'<@!{giverr}>', inline=False)
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
+    embed.add_field(name='Server', value=guild.name, inline=False)
     if URL is None:
         await logChannel.send(embed=embed)
     else:
