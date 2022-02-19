@@ -23,7 +23,7 @@ class vouchcommands(commands.Cog):
   async def vouch(self, ctx, member: discord.Member, ratings , *args):
       trade = (" ".join(args[:]))
       logChannel = self.client.get_channel(config.LOG_CHANNEL_ID)
-      channel = ctx.message.channel
+      guild = ctx.guild
       vouchChannel = config.VOUCHES_CHANNEL_ID
       if member == ctx.author:
           await ctx.send("You cannot vouch for yourself.")
@@ -68,7 +68,7 @@ class vouchcommands(commands.Cog):
                               member,
                               trade,
                               isPositive,
-                              channel,
+                              guild,
                               logChannel,
                               ratings,
                               attachment
