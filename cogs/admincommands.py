@@ -40,7 +40,7 @@ class vouchadmincommands(commands.Cog):
         channel = ctx.message.channel
         success = await adminCommands.removemany(member, channel, args)
         if success:
-            await ctx.send(f'**{args}** vouches have been removed from {member.mention}')
+            await ctx.send(f'**{args}** vouches have been removed from **{member}**')
 
 
     
@@ -118,7 +118,7 @@ class vouchadmincommands(commands.Cog):
         channel = ctx.message.channel
         success = await adminCommands.remove(member, channel, args)
         if success[0]:
-            await ctx.send(f"Removed VouchID **{success[1]}** from {member.mention}")
+            await ctx.send(f"Removed VouchID **{success[1]}** from **{member}**")
         else:
             await ctx.send(f"VouchID **{success[1]}** doesn't exists")
 
