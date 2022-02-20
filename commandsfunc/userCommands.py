@@ -301,7 +301,9 @@ async def profile(targetUser: discord.User, bcGuild: discord.Guild,
 
     embed.set_author(name=authorName, icon_url=targetUser.avatar_url)
     embed.set_footer(text="Account created " + str(daysLeft.days) +" days ago" + "      Joined market " + str(daysLeft2.days) + " days ago")
-    await channel.send(embed=embed)
+    vc = await channel.send(embed=embed)
+
+    return vc
     
 
 

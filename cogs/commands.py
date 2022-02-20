@@ -8,15 +8,56 @@ import asyncio
 import datetime
 import jmespath
 from pymongo import MongoClient
-from discord.ext import commands
-
+from discord.ext import commands, menus
 from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
+from discord.ext.menus import button, First, Last
 
+BLUE = 0x00A6ED
+GREY = 0x999999
+ass = 0xFFEFD5
 cluster = MongoClient(config.MongoDBkey)
+
+
+class Test:
+    def __init__(self, value, comment):
+        self.value = value
+        self.message = comment
+    def __repr__(self):
+        return f'{self.value}★ : {self.message}'
+
+async def generate(number, vouches):
+    for i in vouches:
+        yield Test(i['Rating'], i['Message'])
+
+class Source(menus.AsyncIteratorPageSource):
+    def __init__(self, userID: discord.Member):
+        db = cluster[config.database][config.collection]  
+        for document in db.find():
+            self.allData = document
+        search_users = 'Users[]'
+        self.users = jmespath.search(search_users, self.allData)
+        search_vouches = 'Users[?ID==`'+ str(userID.id) +'`].Vouches[]'
+        search_ratings = 'Users[?ID==`'+ str(userID.id) +'`].Vouches[].Rating[]'
+        totalvouchesreceived = jmespath.search(search_vouches, self.allData)
+        totalratings = jmespath.search(search_ratings, self.allData)
+        vouchestotal = int(len(totalvouchesreceived))
+        self.user = userID
+        super().__init__(generate(vouchestotal, totalvouchesreceived), per_page=10)
+
+
+    async def format_page(self, menu, entries):
+        start = menu.current_page * self.per_page
+        return discord.Embed(
+        title= f'Page {menu.current_page + 1} - {self.user}\'s reviews',
+        description=f'\n'.join(f'`{i + 1}`. {v!r}' for i, v in enumerate(entries, start=start)),
+        color= ass,
+    )
 
 class vouchcommands(commands.Cog):
   def __init__(self, client):
     self.client = client
+
+
 
   @commands.command(cooldown_after_parsing=True)
   @commands.cooldown(1, 900, type= commands.BucketType.user)
@@ -95,12 +136,35 @@ class vouchcommands(commands.Cog):
   @commands.command(name ="profile", aliases=["vouches"])
   async def profile(self, ctx, member: discord.Member = None):
       if member is None:
-          user = ctx.author
+          person = ctx.author
       else:
-          user = member
-      await userCommands.profile(targetUser=user,
+          person = member
+      vc = await userCommands.profile(ctx,
+            targetUser=person,
           bcGuild=self.client.get_guild(ctx.guild.id),
           channel= ctx.message.channel)
+
+
+      reactmoji = ["🔍"]
+
+      await vc.add_reaction("🔍")  
+
+ 
+      def check(reaction, user):
+          return user == ctx.author and str(reaction.emoji) in ['🔍']
+        
+      while True:
+          try:
+              reaction, user = await self.client.wait_for('reaction_add', timeout = 20.0, check= check)
+              if reaction.emoji == '🔍':
+                  await vc.delete()
+                  pages = menus.MenuPages(source=Source(person), delete_message_after = True)
+                  await pages.start(ctx)
+          except asyncio.TimeoutError:
+              await vc.delete()
+              break
+
+    
 
   @commands.command()
   async def vhelp(self, ctx):
