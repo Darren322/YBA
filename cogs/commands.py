@@ -24,7 +24,7 @@ class Test:
         self.message = comment
         self.id = giver
     def __repr__(self):
-        return f'{self.value}★ : {self.message} - <@!{self.id}'
+        return f'{self.value}★ : {self.message} - <@!{self.id}>'
 
 async def generate(number, vouches):
     for i in vouches:
