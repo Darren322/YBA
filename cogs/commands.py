@@ -158,13 +158,8 @@ class vouchcommands(commands.Cog):
           try:
               reaction, user = await self.client.wait_for('reaction_add', timeout = 20.0, check= check)
               if reaction.emoji == '🔍':
-                  await vc.delete()
                   pages = menus.MenuPages(source=Source(person), delete_message_after = True)
                   await pages.start(ctx)
-                  await userCommands.profile(ctx,
-            targetUser=person,
-          bcGuild=self.client.get_guild(ctx.guild.id),
-          channel= ctx.message.channel)
           except asyncio.TimeoutError:
               await vc.delete()
               await userCommands.profile(ctx,
