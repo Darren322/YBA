@@ -165,7 +165,10 @@ class vouchcommands(commands.Cog):
               await vc.delete()
               break
 
-    
+      await userCommands.profile(ctx,
+            targetUser=person,
+          bcGuild=self.client.get_guild(ctx.guild.id),
+          channel= ctx.message.channel)
 
   @commands.command()
   async def vhelp(self, ctx):
