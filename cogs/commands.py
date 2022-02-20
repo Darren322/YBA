@@ -10,7 +10,7 @@ import jmespath
 from pymongo import MongoClient
 from discord.ext import commands, menus
 from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
-from discord.ext.menus import button, First, Last
+
 
 BLUE = 0x00A6ED
 GREY = 0x999999
