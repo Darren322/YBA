@@ -10,7 +10,7 @@ import jmespath
 from pymongo import MongoClient
 from discord.ext import commands, menus
 from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
-
+from discord.ext.menus import button, First, Last
 
 BLUE = 0x00A6ED
 GREY = 0x999999
@@ -139,13 +139,13 @@ class vouchcommands(commands.Cog):
           person = ctx.author
       else:
           person = member
+      print("hi")
       vc = await userCommands.profile(ctx,
             targetUser=person,
           bcGuild=self.client.get_guild(ctx.guild.id),
           channel= ctx.message.channel)
 
-
-      reactmoji = ["🔍"]
+      print("hi")
 
       await vc.add_reaction("🔍")  
 

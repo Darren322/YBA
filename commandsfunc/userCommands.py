@@ -171,7 +171,7 @@ async def help(prefix: str, user: discord.User, isMaster):
 
     await user.send(embed=embed)
 
-async def profile(targetUser: discord.User, bcGuild: discord.Guild,
+async def profile(ctx, targetUser: discord.User, bcGuild: discord.Guild,
                   channel: discord.TextChannel):
     '''
         If a user is mentioned, it will display their profiles
