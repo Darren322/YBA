@@ -19,15 +19,16 @@ cluster = MongoClient(config.MongoDBkey)
 
 
 class Test:
-    def __init__(self, value, comment):
+    def __init__(self, value, comment, giver):
         self.value = value
         self.message = comment
+        self.id = giver
     def __repr__(self):
-        return f'{self.value}★ : {self.message}'
+        return f'{self.value}★ : {self.message} - <@!{self.id}'
 
 async def generate(number, vouches):
     for i in vouches:
-        yield Test(i['Rating'], i['Message'])
+        yield Test(i['Rating'], i['Message'], i['Giver'])
 
 class Source(menus.AsyncIteratorPageSource):
     def __init__(self, userID: discord.Member):
