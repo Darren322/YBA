@@ -161,7 +161,7 @@ class vouchcommands(commands.Cog):
                   pages = menus.MenuPages(source=Source(person), delete_message_after = True)
                   await pages.start(ctx)
           except asyncio.TimeoutError:
-              await vc.remove_reaction
+              await vc.clear_reactions
               break
 
 
