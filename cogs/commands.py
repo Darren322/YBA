@@ -161,11 +161,7 @@ class vouchcommands(commands.Cog):
                   pages = menus.MenuPages(source=Source(person), delete_message_after = True)
                   await pages.start(ctx)
           except asyncio.TimeoutError:
-              await vc.delete()
-              await userCommands.profile(ctx,
-            targetUser=person,
-          bcGuild=self.client.get_guild(ctx.guild.id),
-          channel= ctx.message.channel)
+              await vc.remove_reaction
               break
 
 
