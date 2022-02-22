@@ -204,9 +204,24 @@ class vouchcommands(commands.Cog):
             if int(memberid) == i['ID']:
                 userid = int(memberid)
                 User = await self.client.fetch_user(userid)
-                await userCommands.profile2(targetUser = User, 
+                vc = await userCommands.profile2(targetUser = User, 
                 bcGuild=self.client.get_guild(config.GUILD_ID), channel = ctx.channel)
                 break
+                await vc.add_reaction("🔍")  
+
+            
+                def check(reaction, user):
+                    return user == ctx.author and str(reaction.emoji) in ['🔍']
+                    
+                while True:
+                    try:
+                        reaction, user = await self.client.wait_for('reaction_add', timeout = 20.0, check= check)
+                        if reaction.emoji == '🔍':
+                            await vc.clear_reactions()
+                            pages = menus.MenuPages(source=Source(User), delete_message_after = True)
+                            await pages.start(ctx)
+                    except asyncio.TimeoutError:
+                        await vc.clear
           else:
             await ctx.send("User has never been in this server")
             
