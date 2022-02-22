@@ -204,10 +204,10 @@ class vouchcommands(commands.Cog):
             if int(memberid) == i['ID']:
                 userid = int(memberid)
                 User = await self.client.fetch_user(userid)
-                vc = await userCommands.profile2(targetUser = User, 
+                ass = await userCommands.profile2(targetUser = User, 
                 bcGuild=self.client.get_guild(config.GUILD_ID), channel = ctx.channel)
                 
-                await vc.add_reaction("🔍")  
+                await ass.add_reaction("🔍")  
                 
             
                 def check(reaction, user):
