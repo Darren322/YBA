@@ -140,13 +140,12 @@ class vouchcommands(commands.Cog):
           person = ctx.author
       else:
           person = member
-      print("hi")
+
       vc = await userCommands.profile(ctx,
             targetUser=person,
           bcGuild=self.client.get_guild(ctx.guild.id),
           channel= ctx.message.channel)
 
-      print("hi")
 
       await vc.add_reaction("🔍")  
 
