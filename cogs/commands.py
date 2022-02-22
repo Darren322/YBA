@@ -31,7 +31,7 @@ async def generate(number, vouches):
         yield Test(i['Rating'], i['Message'], i['Giver'])
 
 class Source(menus.AsyncIteratorPageSource):
-    def __init__(self, userID: discord.Member):
+    def __init__(self, userID: discord.User):
         db = cluster[config.database][config.collection]  
         for document in db.find():
             self.allData = document
@@ -208,7 +208,7 @@ class vouchcommands(commands.Cog):
                 bcGuild=self.client.get_guild(config.GUILD_ID), channel = ctx.channel)
                 break
                 await vc.add_reaction("🔍")  
-
+                
             
                 def check(reaction, user):
                     return user == ctx.author and str(reaction.emoji) in ['🔍']
