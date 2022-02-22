@@ -217,11 +217,11 @@ class vouchcommands(commands.Cog):
                     try:
                         reaction, user = await self.client.wait_for('reaction_add', timeout = 20.0, check= check)
                         if reaction.emoji == '🔍':
-                            await vc.clear_reactions()
+                            await ass.clear_reactions()
                             pages = menus.MenuPages(source=Source(User), delete_message_after = True)
                             await pages.start(ctx)
                     except asyncio.TimeoutError:
-                        await vc.clear
+                        await ass.clear_reactions()
                         break
                 break
           else:
