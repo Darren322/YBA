@@ -206,7 +206,7 @@ class vouchcommands(commands.Cog):
                 User = await self.client.fetch_user(userid)
                 vc = await userCommands.profile2(targetUser = User, 
                 bcGuild=self.client.get_guild(config.GUILD_ID), channel = ctx.channel)
-                break
+                
                 await vc.add_reaction("🔍")  
                 
             
@@ -222,6 +222,8 @@ class vouchcommands(commands.Cog):
                             await pages.start(ctx)
                     except asyncio.TimeoutError:
                         await vc.clear
+                        break
+                break
           else:
             await ctx.send("User has never been in this server")
             
