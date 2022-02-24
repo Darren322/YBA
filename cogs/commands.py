@@ -67,7 +67,7 @@ class vouchcommands(commands.Cog):
       logChannel = self.client.get_channel(config.LOG_CHANNEL_ID)
       guild = ctx.guild
       vouchChannel = config.VOUCHES_CHANNEL_ID
-      emoji = client.get_emoji()
+
       if member == ctx.author:
           await ctx.send("You cannot vouch for yourself.")
           ctx.command.reset_cooldown(ctx)
