@@ -67,6 +67,7 @@ class vouchcommands(commands.Cog):
       logChannel = self.client.get_channel(config.LOG_CHANNEL_ID)
       guild = ctx.guild
       vouchChannel = config.VOUCHES_CHANNEL_ID
+      emoji = client.get_emoji()
       if member == ctx.author:
           await ctx.send("You cannot vouch for yourself.")
           ctx.command.reset_cooldown(ctx)
@@ -118,7 +119,7 @@ class vouchcommands(commands.Cog):
       if success == False:
           await ctx.author.send("You have been blacklisted from vouching!")
       elif success == True:
-          await ctx.send(f"**{ctx.author}** has vouched **{member}** :buisnessman:")
+          await ctx.send(f"**{ctx.author}** has vouched **{member}** <:buisnessman:923356712277278730>")
 
 
 

@@ -30,7 +30,7 @@ class vouchadmincommands(commands.Cog):
                                 ctx.message.channel
                                 )  
         if success[0]:
-            await ctx.send(f"Added {success[1]} to scammer list :Ayo:")
+            await ctx.send(f"Added {success[1]} to scammer list <:Ayo:923551424942583878>")
         else:
             await ctx.send(f"Removed {success[1]} from scammer list")
 
