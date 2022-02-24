@@ -119,7 +119,7 @@ class vouchcommands(commands.Cog):
       if success == False:
           await ctx.author.send("You have been blacklisted from vouching!")
       elif success == True:
-          await ctx.send(f"**{ctx.author}** has vouched **{member}** <:buisnessman:923356712277278730>")
+          await ctx.send(f"**{ctx.author}** has vouched **{member}**")
 
 
 
