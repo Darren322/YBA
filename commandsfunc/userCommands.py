@@ -127,7 +127,7 @@ async def getrole(user: discord.User, bcGuild: discord.Guild, channel: discord.T
         return True, trustedname
        
 
-    elif trusted_role not in user.roles and trusted_role2 not in user.roles and len(us.vouches) >= 50:
+    elif trusted_role not in user.roles and trusted_role2 not in user.roles and trusted_role3 not in user.roles and trusted_role4 not in user.roles and trusted_role5 not in user.roles and len(us.vouches) >= 50:
         await user.add_roles(trusted_role)
         trustedname = 'Trusted 1'
         return True, trustedname
