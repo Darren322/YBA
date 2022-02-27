@@ -84,7 +84,7 @@ async def on_message(message):
             await stafflogs.send(embed=embed)
 
     if message.channel == buying:
-        if len(messagecheck) > ybatrading:
+        if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
