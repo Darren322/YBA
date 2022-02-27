@@ -138,6 +138,130 @@ async def on_message(message):
 
     await client.process_commands(message)
 
+
+@client.event
+async def on_message_edit(message_before, message_after):
+    messagecheck = message_after.content.split('\n')
+    errormsg = "**Nice edit noob**. 15 lines and below please"
+    booster = client.get_channel(945172855753158677)
+    trusted = client.get_channel(945172630368047114)
+    selling = client.get_channel(945170591877591052)
+    buying = client.get_channel(945170606603771934)
+    ybatrading = client.get_channel(945170625025151046)
+    outsideyba = client.get_channel(945172437484601385)
+    stafflogs = client.get_channel(940342044780535839)
+    msglimit = 15
+    reason = "Edited message over 15 lines"
+
+    if message_after.channel == booster:
+        if len(messagecheck) > msglimit:
+            time.sleep(2)
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+            
+
+    if message_after.channel == trusted:
+        if len(messagecheck) > msglimit:
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+    if message.channel == selling:
+        if len(messagecheck) > msglimit:
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+    if message.channel == buying:
+        if len(messagecheck) > msglimit:
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+    if message.channel == ybatrading:
+        if len(messagecheck) > msglimit:
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+    if message.channel == outsideyba:
+        if len(messagecheck) > msglimit:
+            await message_after.channel.purge(limit = 1)
+            await message_after.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
+            embed.add_field(name='Before\n',
+                            value=f'{message_before.content}', inline=False)
+            embed.add_field(name='After\n',
+                            value=f'{message_after.content}', inline=False)
+            embed.add_field(name='ID\n',
+                            value=f'```{message_after.author.id}```', inline=False)
+            embed.set_author(name =f'{message_after.author}', icon_url=message_after.author.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+    await client.process_commands(message)
+
+
+
 @client.command()
 async def load(ctx, extension):
     if ctx.author.id != 241927483962687488:
