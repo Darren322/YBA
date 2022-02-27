@@ -57,7 +57,7 @@ async def on_message(message):
 
             
 
-    if message.channel == booster:
+    if message.channel == trusted:
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
