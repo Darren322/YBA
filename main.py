@@ -12,7 +12,7 @@ from discord.ext import commands
 
 from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
 
-
+RED = 0xEF233C
 
 client = commands.Bot(command_prefix = config.PREFIX, help_command = None)
 
@@ -33,39 +33,95 @@ async def on_message(message):
     buying = client.get_channel(945170606603771934)
     ybatrading = client.get_channel(945170625025151046)
     outsideyba = client.get_channel(945172437484601385)
+    stafflogs = client.get_channel(940342044780535839)
     msglimit = 15
     errormsg = "Your message needs to be equal to or less than 15 lines!"
+
+
+
+
 
     if message.channel == booster:
         if len(messagecheck) > msglimit:
             time.sleep(2)
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
+            
 
     if message.channel == booster:
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
 
     if message.channel == selling:
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
 
     if message.channel == buying:
         if len(messagecheck) > ybatrading:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
 
     if message.channel == ybatrading:
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
 
     if message.channel == outsideyba:
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
+            embed = discord.Embed(description=f'Message deleted in {channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.add_field(name='Content\n',
+                            value=f'{messagecheck}', inline=False)
+            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            await stafflogs.send(embed=embed)
+
 
 
     await client.process_commands(message)
