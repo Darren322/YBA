@@ -259,7 +259,7 @@ async def on_message_edit(message_before, message_after):
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
-    await client.process_commands(message)
+
 
 
 
