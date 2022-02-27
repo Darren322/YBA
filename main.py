@@ -14,6 +14,7 @@ from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
 
 RED = 0xEF233C
 YELLOW = 0xFFB400
+ORANGE = 0xFF7106
 
 client = commands.Bot(command_prefix = config.PREFIX, help_command = None)
 
@@ -47,7 +48,7 @@ async def on_message(message):
             time.sleep(2)
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
@@ -64,7 +65,7 @@ async def on_message(message):
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
@@ -79,7 +80,7 @@ async def on_message(message):
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
@@ -94,7 +95,7 @@ async def on_message(message):
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
@@ -109,7 +110,7 @@ async def on_message(message):
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
@@ -124,7 +125,7 @@ async def on_message(message):
         if len(messagecheck) > msglimit:
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=ORANGE, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
