@@ -24,15 +24,15 @@ async def on_ready():
     print("connected to database")
 
 
-@cilent.event
+@client.event
 async def on_message(message):
     messagecheck = message.content.split('\n')
-    booster = cilent.get_channel(945172855753158677)
-    trusted = cilent.get_channel(945172630368047114)
-    selling = cilent.get_channel(945170591877591052)
-    buying = cilent.get_channel(945170606603771934)
-    ybatrading = cilent.get_channel(945170625025151046)
-    outsideyba = cilent.get_channel(945172437484601385)
+    booster = client.get_channel(945172855753158677)
+    trusted = client.get_channel(945172630368047114)
+    selling = client.get_channel(945170591877591052)
+    buying = client.get_channel(945170606603771934)
+    ybatrading = client.get_channel(945170625025151046)
+    outsideyba = client.get_channel(945172437484601385)
     msglimit = 15
     errormsg = "Your message needs to be equal to or less than 15 lines!"
 
