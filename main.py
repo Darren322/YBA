@@ -13,6 +13,7 @@ from discord.ext import commands
 from discordHelper import newEmbed, errorMessage, RED, BLUE, GREEN, YELLOW
 
 RED = 0xEF233C
+YELLOW = 0xFFB400
 
 client = commands.Bot(command_prefix = config.PREFIX, help_command = None)
 
@@ -158,7 +159,7 @@ async def on_message_edit(message_before, message_after):
             time.sleep(2)
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
@@ -177,7 +178,7 @@ async def on_message_edit(message_before, message_after):
         if len(messagecheck) > msglimit:
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
@@ -190,11 +191,11 @@ async def on_message_edit(message_before, message_after):
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
-    if message.channel == selling:
+    if message_after.channel == selling:
         if len(messagecheck) > msglimit:
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
@@ -207,11 +208,11 @@ async def on_message_edit(message_before, message_after):
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
-    if message.channel == buying:
+    if message_after.channel == buying:
         if len(messagecheck) > msglimit:
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
@@ -224,11 +225,11 @@ async def on_message_edit(message_before, message_after):
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
-    if message.channel == ybatrading:
+    if message_after.channel == ybatrading:
         if len(messagecheck) > msglimit:
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
@@ -241,11 +242,11 @@ async def on_message_edit(message_before, message_after):
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
-    if message.channel == outsideyba:
+    if message_after.channel == outsideyba:
         if len(messagecheck) > msglimit:
             await message_after.channel.purge(limit = 1)
             await message_after.author.send(errormsg)
-            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed = discord.Embed(description=f'Message deleted in {message_after.channel.mention}', title='', color=YELLOW, timestamp=datetime.utcnow())
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Before\n',
