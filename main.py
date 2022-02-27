@@ -3,7 +3,7 @@ import config
 import discord 
 import time
 import asyncio
-import datetime
+from datetime import datetime 
 import jmespath
 
 from pymongo import MongoClient
