@@ -51,7 +51,7 @@ async def on_message(message):
                             value=f'{messagecheck}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
@@ -79,7 +79,7 @@ async def on_message(message):
                             value=f'{messagecheck}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
@@ -92,7 +92,7 @@ async def on_message(message):
                             value=f'{messagecheck}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
@@ -105,7 +105,7 @@ async def on_message(message):
                             value=f'{messagecheck}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
@@ -118,7 +118,7 @@ async def on_message(message):
                             value=f'{messagecheck}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.set_author(name =f'{authorName}', icon_url=targetUser.avatar_url)
+            embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
