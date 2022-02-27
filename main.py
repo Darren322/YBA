@@ -48,7 +48,7 @@ async def on_message(message):
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
@@ -63,7 +63,7 @@ async def on_message(message):
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
@@ -76,7 +76,7 @@ async def on_message(message):
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
@@ -89,7 +89,7 @@ async def on_message(message):
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
@@ -102,7 +102,7 @@ async def on_message(message):
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
@@ -117,7 +117,7 @@ async def on_message(message):
             embed.add_field(name='Reason\n',
                             value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
-                            value=f'{message}', inline=False)
+                            value=f'{message.content}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
