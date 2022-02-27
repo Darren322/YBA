@@ -36,7 +36,7 @@ async def on_message(message):
     stafflogs = client.get_channel(940342044780535839)
     msglimit = 15
     errormsg = "Your message needs to be equal to or less than 15 lines!"
-
+    reason = "Going over 15 lines"
 
 
 
@@ -49,6 +49,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
@@ -62,6 +64,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
@@ -73,6 +77,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
@@ -84,6 +90,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
@@ -95,6 +103,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
             embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
@@ -104,6 +114,8 @@ async def on_message(message):
             await message.channel.purge(limit = 1)
             await message.author.send(errormsg)
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
+            embed.add_field(name='Reason\n',
+                            value=f'{reason}', inline=False)
             embed.add_field(name='Content\n',
                             value=f'{message}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
