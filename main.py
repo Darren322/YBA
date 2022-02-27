@@ -49,10 +49,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
             
@@ -64,10 +62,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
     if message.channel == selling:
@@ -77,10 +73,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
     if message.channel == buying:
@@ -90,10 +84,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
     if message.channel == ybatrading:
@@ -103,10 +95,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
     if message.channel == outsideyba:
@@ -116,10 +106,8 @@ async def on_message(message):
             embed = discord.Embed(description=f'Message deleted in {message.channel.mention}', title='', color=RED, timestamp=datetime.utcnow())
             embed.add_field(name='Content\n',
                             value=f'{messagecheck}', inline=False)
-            embed.add_field(name='Content\n',
-                            value=f'{messagecheck}', inline=False)
             embed.set_author(name =f'{message.author}', icon_url=message.author.avatar_url)
-            embed.set_footer(text=f"{client}", icon_url=client.user.avatar_url)
+            embed.set_footer(text=f"{client.user}", icon_url=client.user.avatar_url)
             await stafflogs.send(embed=embed)
 
 
