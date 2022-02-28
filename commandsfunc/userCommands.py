@@ -244,18 +244,19 @@ async def profile(ctx, targetUser: discord.User, bcGuild: discord.Guild,
     except ZeroDivisionError:
       AverageRatings = 0
 
+    totalratings = round(AverageRatings, 1)
 
-    if AverageRatings >= 5:
+    if totalratings >= 5:
       Ratings = '★★★★★'
-    elif AverageRatings >= 4:
+    elif totalratings >= 4:
       Ratings = '★★★★☆'
-    elif AverageRatings >= 3:
+    elif totalratings >= 3:
       Ratings = '★★★☆☆'
-    elif AverageRatings >= 2:
+    elif totalratings >= 2:
       Ratings = '★★☆☆☆'
-    elif AverageRatings >= 1:
+    elif totalratings >= 1:
       Ratings = '★☆☆☆☆'
-    elif AverageRatings >= 0:
+    elif totalratings >= 0:
       Ratings = '☆☆☆☆☆'
 
     if u.isScammer:
@@ -271,10 +272,7 @@ async def profile(ctx, targetUser: discord.User, bcGuild: discord.Guild,
       warning = ""
 
 
-    if len(str(AverageRatings).split('.')[-1]) == 2:
-      totalratings = round(AverageRatings, 2)
-    else:
-      totalratings = round(AverageRatings, 1)
+
 
     # Add relevant information
     embed = newEmbed(description='', title='', color=color)
@@ -348,17 +346,19 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
     except ZeroDivisionError:
       AverageRatings = 0
 
-    if AverageRatings >= 5:
+    totalratings = round(AverageRatings, 1)
+
+    if totalratings >= 5:
       Ratings = '★★★★★'
-    elif AverageRatings >= 4:
+    elif totalratings >= 4:
       Ratings = '★★★★☆'
-    elif AverageRatings >= 3:
+    elif totalratings >= 3:
       Ratings = '★★★☆☆'
-    elif AverageRatings >= 2:
+    elif totalratings >= 2:
       Ratings = '★★☆☆☆'
-    elif AverageRatings >= 1:
+    elif totalratings >= 1:
       Ratings = '★☆☆☆☆'
-    elif AverageRatings >= 0:
+    elif totalratings >= 0:
       Ratings = '☆☆☆☆☆'
 
     if u.isScammer:
@@ -367,10 +367,6 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
       IsScammer = "No"
 
      
-    if len(str(AverageRatings).split('.')[-1]) == 2:
-      totalratings = round(AverageRatings, 2)
-    else:
-      totalratings = round(AverageRatings, 1)
 
 
 
