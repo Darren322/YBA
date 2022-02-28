@@ -271,8 +271,10 @@ async def profile(ctx, targetUser: discord.User, bcGuild: discord.Guild,
       warning = ""
 
 
-
-    totalratings = round(AverageRatings, 1)
+    if len(AverageRatings.rsplit('.')[-1]) == 2:
+      totalratings = round(AverageRatings, 2)
+    else:
+      totalratings = round(AverageRatings, 1)
 
     # Add relevant information
     embed = newEmbed(description='', title='', color=color)
@@ -365,7 +367,10 @@ async def profile2(targetUser: discord.User, bcGuild: discord.Guild,
       IsScammer = "No"
 
      
-    totalratings = round(AverageRatings, 1)
+    if len(AverageRatings.rsplit('.')[-1]) == 2:
+      totalratings = round(AverageRatings, 2)
+    else:
+      totalratings = round(AverageRatings, 1)
 
 
 
