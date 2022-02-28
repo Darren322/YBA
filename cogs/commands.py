@@ -90,7 +90,7 @@ class vouchcommands(commands.Cog):
           return
 
       if ctx.message.channel.id not in vouchChannel:
-          await ctx.send(f'You only can use {config.PREFIX}vouch in **vouches** channel')
+          await ctx.send(f'You only can use {config.PREFIX}vouch in **vouches** channel on\n discord.gg/ybatrading')
           ctx.command.reset_cooldown(ctx)
           return
 
@@ -116,6 +116,8 @@ class vouchcommands(commands.Cog):
                               ratings,
                               attachment
                               )
+
+                              
       if success == False:
           await ctx.author.send("You have been blacklisted from vouching!")
       elif success == True:
