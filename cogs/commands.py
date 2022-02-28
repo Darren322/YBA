@@ -93,7 +93,7 @@ class vouchcommands(commands.Cog):
           await ctx.send(f'You only can use {config.PREFIX}vouch in **vouches** channel on\n discord.gg/ybatrading')
           ctx.command.reset_cooldown(ctx)
           return
-
+        
 
       if ratings <= 0 or ratings > 5:
         await ctx.send(f'Please use appropriate rating number. \n Eg: {config.PREFIX}vouch <@!322562448530079745> 5')
