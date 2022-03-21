@@ -62,7 +62,7 @@ async def vouch(user: discord.User,
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
-    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=targetUser.avatar_url)
+    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=user.avatar_url)
     if URL is None:
         await user.send(embed=embed)
     else:
@@ -76,7 +76,7 @@ async def vouch(user: discord.User,
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
-    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=targetUser.avatar_url)
+    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=user.avatar_url)
     if URL is None:
         await logChannel.send(embed=embed)
     else:
