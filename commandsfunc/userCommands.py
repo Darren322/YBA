@@ -62,6 +62,7 @@ async def vouch(user: discord.User,
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_footer(text=f"")
     if URL is None:
         await user.send(embed=embed)
     else:
@@ -75,6 +76,7 @@ async def vouch(user: discord.User,
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_footer(text=f"")
     if URL is None:
         await logChannel.send(embed=embed)
     else:
