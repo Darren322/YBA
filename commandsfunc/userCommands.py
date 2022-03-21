@@ -56,12 +56,13 @@ async def vouch(user: discord.User,
 
 
     # Send embeds to the user
-    embed = newEmbed(description='', title=f'Vouch ID: {vouchNum}', timestamp=datetime.utcnow())
+    embed = newEmbed(description='', title=f'', timestamp=datetime.utcnow())
     embed.add_field(name='Receiver', value=f'<@!{target}>', inline=False)
     embed.add_field(name='Giver', value=f'<@!{giverr}>', inline=False)
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=targetUser.avatar_url)
     if URL is None:
         await user.send(embed=embed)
     else:
@@ -69,12 +70,13 @@ async def vouch(user: discord.User,
         await user.send(embed=embed)
 
     # Send embed to log channel
-    embed = newEmbed(description='', title=f'Vouch ID: {vouchNum}', timestamp=datetime.utcnow())
+    embed = newEmbed(description='', title=f'', timestamp=datetime.utcnow())
     embed.add_field(name='Receiver', value=f'<@!{target}>', inline=False)
     embed.add_field(name='Giver', value=f'<@!{giverr}>', inline=False)
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_author(name = f'Vouch ID: {vouchNum}', icon_url=targetUser.avatar_url)
     if URL is None:
         await logChannel.send(embed=embed)
     else:
