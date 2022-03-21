@@ -54,14 +54,18 @@ async def vouch(user: discord.User,
     vouch = Vouch(vouch)
     db.update_one({'_id': obj_id, 'Users.ID': targetUser.id}, {'$push': {'Users.$[i].Vouches': vouch.toDict()}}, upsert = False, array_filters= [{'i.ID': targetUser.id}])
 
-
+    print(datetime.utcnow())
     # Send embeds to the user
-    embed = newEmbed(description='', title=f'Vouch ID: {vouchNum}', color= BLUE, timestamp=datetime.utcnow())
+    embed = discord.Embed(description='', title=f'', color = BLUE ,timestamp = datetime.utcnow())
+    print(datetime.utcnow())
     embed.add_field(name='Receiver', value=f'<@!{target}>', inline=False)
     embed.add_field(name='Giver', value=f'<@!{giverr}>', inline=False)
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_author(name = f'{user}', icon_url=user.avatar_url)
+    embed.set_footer(text=f"Vouch ID: {vouchNum}")
+
     if URL is None:
         await user.send(embed=embed)
     else:
@@ -69,12 +73,16 @@ async def vouch(user: discord.User,
         await user.send(embed=embed)
 
     # Send embed to log channel
-    embed = newEmbed(description='', title=f'Vouch ID: {vouchNum}', color= BLUE, timestamp=datetime.utcnow())
+    embed = discord.Embed(description='', title=f'', color = BLUE ,timestamp= datetime.utcnow())
+    print(datetime.utcnow())
     embed.add_field(name='Receiver', value=f'<@!{target}>', inline=False)
     embed.add_field(name='Giver', value=f'<@!{giverr}>', inline=False)
     embed.add_field(name='Comment', value=message, inline=False)
     embed.add_field(name='Rating', value=rating, inline=False)
     embed.add_field(name='Server', value=guild.name, inline=False)
+    embed.set_author(name = f'{user}', icon_url=user.avatar_url)
+    embed.set_footer(text=f"Vouch ID: {vouchNum}")
+
     if URL is None:
         await logChannel.send(embed=embed)
     else:
