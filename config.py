@@ -1,11 +1,11 @@
 
 
-DISCORD_TOKEN = "OTAzMTk5MjI0NDYyNzE2OTU4.YXpf0w.aQVnhMEUvGqvYbHZbz1rHZGgV88"
+DISCORD_TOKEN = ""
 LOG_CHANNEL_ID = 936559663045029918
 VOUCHES_CHANNEL_ID = [945502602559365120]
 GUILD_ID = 910699802377998357
 obj_id = "61ac80201e0473310d747c00"
-MongoDBkey = "mongodb+srv://vouch:coralsec1@cluster0.weuqr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+MongoDBkey = ""
 PREFIX = "?"
 database = "database"
 collection = "vouches"
